@@ -3,8 +3,6 @@
 ### AWS SQS에 메시지 보내기 (Provider)
 * [Amazon Simple Queue Service]
 * [Spring Cloud AWS]
-* [My Blog]
-
 ### 준비사항
 * AWS 회원가입 및 SQS Queue 생성 + IAM 설정
 
@@ -34,8 +32,10 @@ public class AmazonSQSApiCallerImpl implements AmazonSQSApiCaller {
 </code>
 </pre>
 
+* [개인 블로그]
+
 
 
 [Amazon Simple Queue Service]: https://aws.amazon.com/ko/sqs/
 [Spring Cloud AWS]: https://cloud.spring.io/spring-cloud-aws/spring-cloud-aws.html
-[My Blog]: https://willseungh0.tistory.com/3
+[개인 블로그]: https://willseungh0.tistory.com/3
