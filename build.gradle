@@ -24,15 +24,13 @@ ext {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
-
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 
-    // Spring cloud AWS 에서 제공하는 AWS SQS를 쉽게 이용하기 위한 라이브러리
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
 }
 
 dependencyManagement {

@@ -3,7 +3,7 @@
 ### AWS SQS에 메시지 보내기 (Provider)
 * [Amazon Simple Queue Service]
 * [Spring Cloud AWS]
-
+* [My Blog]
 
 ### 준비사항
 * AWS 회원가입 및 SQS Queue 생성 + IAM 설정
@@ -15,9 +15,27 @@
 * Spring boot 2.3.2
 * Gradle 6.4.1
 
-개인블로그 -> [Blog]
+
+<pre>
+<code>
+@RequiredArgsConstructor
+@Component
+public class AmazonSQSApiCallerImpl implements AmazonSQSApiCaller {
+
+	private final AmazonSQSComponent amazonSQSComponent;
+
+	private final AmazonSQS amazonSQS;
+
+	public SendMessageResult sendMessage(String message) {
+		return amazonSQS.sendMessage(amazonSQSComponent.getUrl(), message);
+	}
+
+}
+</code>
+</pre>
+
 
 
 [Amazon Simple Queue Service]: https://aws.amazon.com/ko/sqs/
 [Spring Cloud AWS]: https://cloud.spring.io/spring-cloud-aws/spring-cloud-aws.html
-[Blog]: https://willseungh0.tistory.com/3
+[My Blog]: https://willseungh0.tistory.com/3
