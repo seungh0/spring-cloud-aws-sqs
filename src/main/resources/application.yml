@@ -1,14 +1,14 @@
 spring:
   profiles:
     include:
-      - aws
+      - aws # application-aws.yml
 cloud:
   aws:
     sqs:
       queue:
-        url: https://sqs.ap-northeast-2.amazonaws.com/751264546625/sqs-test
+        url: https://sqs.ap-northeast-2.amazonaws.com/751264546625/sqs-test # AWS SQS Queue url
     region:
-      static: ap-northeast-2
+      static: ap-northeast-2 # AWS SQS Region
     credentials:
       instance-profile: true
     stack:

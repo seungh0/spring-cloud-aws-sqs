@@ -33,4 +33,5 @@ out/
 ### VS Code ###
 .vscode/
 
-application-aws.yml
+#application-aws.yml
+# 예시를 위해 .gitignore에서 제외하였습니다.
