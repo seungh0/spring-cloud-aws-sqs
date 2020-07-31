@@ -1,6 +1,6 @@
 # Spring Cloud AWS와 AWS SQS를 이용한 메시지 큐
 
-### AWS SQS에 메시지 보내기 (Provider)
+### AWS SQS Provider & Consumer 구현
 * [Amazon Simple Queue Service]
 * [Spring Cloud AWS]
 ### 준비사항
@@ -13,7 +13,9 @@
 * Spring boot 2.3.2
 * Gradle 6.4.1
 
+---
 
+#### Provider
 <pre>
 <code>
 @RequiredArgsConstructor
@@ -31,6 +33,23 @@ public class AmazonSQSApiCallerImpl implements AmazonSQSApiCaller {
 }
 </code>
 </pre>
+
+#### Consumer
+<pre>
+<code>
+@RestController
+public class AmazonSQSListener {
+
+	@SqsListener("${cloud.aws.sqs.queue.url}")
+	public void receive(String message, @Header("SenderId") String senderId) {
+		System.out.println(String.format("%s %s", message, senderId));
+	}
+
+}
+</code>
+</pre>
+
+---
 
 * [개인 블로그]
 
